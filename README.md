@@ -27,17 +27,17 @@
 
 ### API列表
 
-  API                                 | 说明
-  :-----------------------------------|:-----------------------
-  [DBX.back](#DBX-back)               | 后退
-  [DBX.forward](#DBX-forward)         | 前进
-  [DBX.close](#DBX-close)             | 关闭
-  [DBX.reload](#DBX-reload)           | 重新加载
-  [DBX.refresh](#DBX-refresh)         | 刷新
-  [DBX.getFee](#DBX-getFee)           | 获取手续费
-  [DBX.getBalance](#DBX-getBalance)   | 获取余额
-  [DBX.getAssets](#DBX-getAssets)     | 获取当前钱包账户的资产列表
-  [DBX.transaction](#DBX-transaction) | 发起交易
+   API                                     | 说明
+  :----------------------------------------|:-----------------------
+  [DBX.back](#dbxback)                     | 后退
+  [DBX.forward](#dbxforward)               | 前进
+  [DBX.close](#dbxclose)                   | 关闭
+  [DBX.reload](#dbxreload)                 | 重新加载
+  [DBX.refresh](#dbxrefresh)               | 刷新
+  [DBX.getFee](#dbxgetfeeobject)           | 获取手续费
+  [DBX.getBalance](#dbxgetbalanceobject)   | 获取余额
+  [DBX.getAssets](#dbxgetassetsobject)     | 获取当前钱包账户的资产列表
+  [DBX.transaction](#dbxtransactionobject) | 发起交易
 
 ### DBX.back()
   
