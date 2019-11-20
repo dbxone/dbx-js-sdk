@@ -29,15 +29,34 @@
 
    API                                     | 说明
   :----------------------------------------|:-----------------------
+  [DBX.ready](#dbxreadycallback)           | 初始化回调
   [DBX.back](#dbxback)                     | 后退
   [DBX.forward](#dbxforward)               | 前进
   [DBX.close](#dbxclose)                   | 关闭
   [DBX.reload](#dbxreload)                 | 重新加载
   [DBX.refresh](#dbxrefresh)               | 刷新
-  [DBX.getFee](#dbxgetfeeobject)           | 获取手续费
-  [DBX.getBalance](#dbxgetbalanceobject)   | 获取余额
+  [DBX.getAccount](#dbxgetaccountobject)   | 获取钱包账户
   [DBX.getAssets](#dbxgetassetsobject)     | 获取当前钱包账户的资产列表
+  [DBX.getBalance](#dbxgetbalanceobject)   | 获取余额
+  [DBX.getFee](#dbxgetfeeobject)           | 获取手续费
   [DBX.transaction](#dbxtransactionobject) | 发起交易
+
+### DBX.ready(CALLBACK)
+  
+  初始化函数，所有的API必须在`ready`之后方可调用
+  
+  **示例**
+  
+  ```js
+  DBX.read(function() {
+    DBX.getAccount({
+      success: function(account) {
+        console.log(account.id);
+        console.log(account.name);
+      }
+    });
+  });
+  ```
 
 ### DBX.back()
   
@@ -107,6 +126,35 @@
   
   ```js
   DBX.refresh();
+  ```
+
+### DBX.getAccount(OBJECT)
+  
+  获取当前钱包账户的资产列表
+  
+  **OBJECT 参数说明**
+	
+  参数名   |  类型     | 必填 | 说明
+  --------|----------|------|---------------------
+  success | Function |  是  | 成功回调
+  error   | Function |  否  | 失败回调(参数为错误提示)
+  
+  **success 返回参数**
+	
+  参数名   |  类型    | 说明
+  --------|---------|---------------------
+  id      | String  | 账户ID
+  name    | String  | 账户名
+  
+  **示例**
+  
+  ```js
+  DBX.getAccount({
+    success: function(account) {
+      console.log(account.id);
+      console.log(account.name);
+    }
+  });
   ```
 
 ### DBX.getAssets(OBJECT)

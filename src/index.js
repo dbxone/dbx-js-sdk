@@ -41,6 +41,7 @@ const EVENT_TYPES = {
   PLUS_READY: 'plusready',
   ON_GET_FEE_DONE: 'onGetFeeDone',
   ON_GET_ASSETS_DONE: 'onGetAssetsDone',
+  ON_GET_ACCOUNT_DONE: 'onGetAccountDone',
   ON_GET_BALANCE_DONE: 'onGetBalanceDone',
   ON_TRANSACTION_DONE: 'onTransactionDone'
 };
@@ -79,7 +80,7 @@ function onAndFireEvent(options, key, type) {
   }
 
   if (_.isPlainObject(options)) {
-    const { data, success, error } = options;
+    const { success, error, ...data } = options;
 
     if (key) {
       const handler = listeners[key] || (listeners[key] = {});
@@ -120,6 +121,9 @@ export default {
   },
   getAssets: function(config) {
     onAndFireEvent(config, EVENT_TYPES.ON_GET_ASSETS_DONE, 'getAssets');
+  },
+  getAccount: function(config) {
+    onAndFireEvent(config, EVENT_TYPES.ON_GET_ACCOUNT_DONE, 'getAccount');
   },
   getBalance: function(config) {
     onAndFireEvent(config, EVENT_TYPES.ON_GET_BALANCE_DONE, 'getBalance');
