@@ -1,6 +1,6 @@
 {
   "name": "dbx-js-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DBX Wallet JS SDK",
   "main": "dist/index.js",
   "scripts": {
@@ -24,9 +24,7 @@
     "SDK",
     "JSSDK"
   ],
-  "dependencies": {
-    "lodash": "^4.17.15"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",

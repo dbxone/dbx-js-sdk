@@ -1,4 +1,4 @@
-import _ from 'lodash/core';
+import * as _ from './utils';
 
 const mui = {
   fire(webview, eventType, data) {
@@ -93,11 +93,7 @@ function onAndFireEvent(options, key, type) {
   }
 }
 
-if (_.isUndefined(window)) {
-  window.mui == window.mui || (window.mui = mui);
-}
-
-export default {
+export const DBX = {
   ready: function(cb) {
     listeners[EVENT_TYPES.PLUS_READY] = cb;
   },
@@ -132,3 +128,10 @@ export default {
     onAndFireEvent(config, EVENT_TYPES.ON_TRANSACTION_DONE, 'transaction');
   }
 };
+
+if (_.isUndefined(window)) {
+  window.mui == window.mui || (window.mui = mui);
+  window.DBX == window.DBX || (window.DBX = DBX);
+}
+
+export default DBX;

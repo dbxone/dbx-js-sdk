@@ -1,4 +1,4 @@
-import DBX from '../src/index';
+import { DBX } from '../dist/index';
 
 test('Runs without crashing', () => {
   console.log(DBX);

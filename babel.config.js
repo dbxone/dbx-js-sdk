@@ -4,6 +4,5 @@ module.exports = {
     ['minify', {
       'keepFnName': true
     }]
-  ],
-  plugins: []
+  ]
 };

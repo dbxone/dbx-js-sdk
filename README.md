@@ -12,7 +12,11 @@
   - nodejs 
 
     ```js
-    const DBX = require('dbx-js-sdk');
+    // ES5
+    const DBX = require('dbx-js-sdk').default;
+
+    // ES6
+    import DBX from 'dbx-js-sdk';
     
     DBX.ready(function() {
       DBX.getAssets({
