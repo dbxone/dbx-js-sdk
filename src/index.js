@@ -1,6 +1,6 @@
 import * as _ from './utils';
 
-const mui = {
+export const mui = {
   fire(webview, eventType, data) {
     if (webview) {
       if (_.isUndefined(data)) {
@@ -17,11 +17,6 @@ const mui = {
     }
   },
   trigger(element, eventType, data) {
-    if (_.isString(data)) {
-      try {
-        data = JSON.parse(data);
-      } catch (e) {}
-    }
     element.dispatchEvent(
       new CustomEvent(eventType, {
         detail: data,
@@ -31,7 +26,15 @@ const mui = {
     );
   },
   receive(eventType, data) {
-    eventType && mui.trigger(document, eventType, data);
+    if (eventType) {
+      if (_.isString(data)) {
+        try {
+          data = JSON.parse(data);
+        } catch (e) {}
+      }
+
+      mui.trigger(document, eventType, data);
+    }
   }
 };
 
