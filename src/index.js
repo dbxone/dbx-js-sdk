@@ -129,7 +129,7 @@ export const DBX = {
   }
 };
 
-if (_.isUndefined(window)) {
+if (!_.isUndefined(window)) {
   window.mui == window.mui || (window.mui = mui);
   window.DBX == window.DBX || (window.DBX = DBX);
 }
