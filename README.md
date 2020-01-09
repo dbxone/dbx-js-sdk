@@ -31,19 +31,23 @@
 
 ### API列表
 
-   API                                     | 说明
-  :----------------------------------------|:-----------------------
-  [DBX.ready](#dbxreadycallback)           | 初始化回调
-  [DBX.back](#dbxback)                     | 后退
-  [DBX.forward](#dbxforward)               | 前进
-  [DBX.close](#dbxclose)                   | 关闭
-  [DBX.reload](#dbxreload)                 | 重新加载
-  [DBX.refresh](#dbxrefresh)               | 刷新
-  [DBX.getAccount](#dbxgetaccountobject)   | 获取钱包账户
-  [DBX.getAssets](#dbxgetassetsobject)     | 获取当前钱包账户的资产列表
-  [DBX.getBalance](#dbxgetbalanceobject)   | 获取余额
-  [DBX.getFee](#dbxgetfeeobject)           | 获取手续费
-  [DBX.transaction](#dbxtransactionobject) | 发起交易
+   API                                                  | 说明
+  :-----------------------------------------------------|:-----------------------
+  [DBX.ready](#dbxreadycallback)                        | 初始化回调
+  [DBX.back](#dbxback)                                  | 后退
+  [DBX.forward](#dbxforward)                            | 前进
+  [DBX.close](#dbxclose)                                | 关闭
+  [DBX.reload](#dbxreload)                              | 重新加载
+  [DBX.refresh](#dbxrefresh)                            | 刷新
+  [DBX.enablePullToRefresh](#dbxenablepulltorefresh)    | 开启下拉刷新
+  [DBX.disablePullToRefresh](#dbxdisablepulltorefresh)  | 关闭下拉刷新
+  [DBX.startPullToRefresh](#dbxstartpulltorefresh)      | 开始下拉刷新
+  [DBX.stopPullToRefresh](#dbxstoppulltorefresh)        | 结束下拉刷新
+  [DBX.getAccount](#dbxgetaccountobject)                | 获取钱包账户
+  [DBX.getAssets](#dbxgetassetsobject)                  | 获取当前钱包账户的资产列表
+  [DBX.getBalance](#dbxgetbalanceobject)                | 获取余额
+  [DBX.getFee](#dbxgetfeeobject)                        | 获取手续费
+  [DBX.transaction](#dbxtransactionobject)              | 发起交易
 
 ### DBX.ready(CALLBACK)
   
@@ -130,6 +134,62 @@
   
   ```js
   DBX.refresh();
+  ```
+
+### DBX.enablePullToRefresh()
+  
+  开启下拉刷新。
+  
+  **参数说明**
+	
+  无参数
+  
+  **示例**
+  
+  ```js
+  DBX.enablePullToRefresh();
+  ```
+
+### DBX.disablePullToRefresh()
+  
+  关闭下拉刷新。
+  
+  **参数说明**
+	
+  无参数
+  
+  **示例**
+  
+  ```js
+  DBX.disablePullToRefresh();
+  ```
+
+### DBX.startPullToRefresh()
+  
+  开始下拉刷新。
+  
+  **参数说明**
+	
+  无参数
+  
+  **示例**
+  
+  ```js
+  DBX.startPullToRefresh();
+  ```
+
+### DBX.stopPullToRefresh()
+  
+  结束下拉刷新。
+  
+  **参数说明**
+	
+  无参数
+  
+  **示例**
+  
+  ```js
+  DBX.stopPullToRefresh();
   ```
 
 ### DBX.getAccount(OBJECT)

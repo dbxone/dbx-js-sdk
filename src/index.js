@@ -115,6 +115,18 @@ export const DBX = {
   forward: function() {
     onAndFireEvent('forward');
   },
+  enablePullToRefresh: function() {
+    onAndFireEvent('enablePullToRefresh');
+  },
+  disablePullToRefresh: function() {
+    onAndFireEvent('disablePullToRefresh');
+  },
+  startPullToRefresh: function() {
+    onAndFireEvent('startPullToRefresh');
+  },
+  stopPullToRefresh: function() {
+    onAndFireEvent('stopPullToRefresh');
+  },
   getFee: function(config) {
     onAndFireEvent(config, EVENT_TYPES.ON_GET_FEE_DONE, 'getFee');
   },
